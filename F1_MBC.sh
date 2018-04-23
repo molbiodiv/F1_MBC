@@ -18,7 +18,8 @@ cd F1_MBC
 
 #############################################################
 #### Obtaining data
-# Getting the Sequence Data Information
+# If you do not have access to our CCTB strorage
+# Getting the Sequence Data Information 
 wget http://www.ebi.ac.uk/ena/data/warehouse/filereport\?accession\=PRJEB8640\&result\=read_run\&fields\=study_accession,secondary_study_accession,sample_accession,secondary_sample_accession,experiment_accession,run_accession,tax_id,scientific_name,instrument_model,library_layout,fastq_ftp,fastq_galaxy,submitted_ftp,submitted_galaxy\&download\=txt -O reads.tsv
 
 # we only want 20 of these
@@ -32,6 +33,11 @@ for i in $(cut -f13 reads_subset.tsv | grep fastq.gz | perl -pe 's/;/\n/')
 do
     wget $i
 done
+
+#### Obtaining data
+# If you have access to our CCTB strorage
+
+cp /storage/full-share/F1_MBC ./
 
 ### Stop here for the introduction talk, the download takes a couple of minutes
 
