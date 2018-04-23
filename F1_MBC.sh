@@ -37,7 +37,7 @@ done
 #### Obtaining data
 # If you have access to our CCTB strorage
 
-cp /storage/full-share/F1_MBC ./
+cp -R /storage/full-share/F1_MBC ./
 
 ### Stop here for the introduction talk, the download takes a couple of minutes
 
